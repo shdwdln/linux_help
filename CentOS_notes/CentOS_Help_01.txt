@@ -1,0 +1,14 @@
+gstreamer-plugins-bad-free.x86_64 
+
+qmmp.x86_64
+
+ rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+# rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+
+yum info vlc
+
+
+It seems you yum is broken due to non-CentOS version of xz installed, better remove that and reinstall the CentOS-version of xz package as shown:
+
+# yum remove epel-release
+# yum install epel-relase

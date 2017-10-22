@@ -1,0 +1,24 @@
+dd if=/dev/zero of=/dev/sdX
+
+
+--------------------------------------------------------------
+Zero-out drive on Linux is done via:
+
+dd if=/dev/zero of=/dev/sdX
+where sdX is the device of the drive to delete.
+
+If you're not aware on how to do this, press Ctrl+Alt+T from Ubuntu, and type following:
+
+sudo dd if=/dev/zero of=/dev/sdb
+
+
+http://askubuntu.com/questions/142858/how-to-zero-out-a-drive
+
+
+---------------------------------------------------------------
+
+
+
+e.g.:
+dd if=/dev/zero of=/dev/sdd bs=1M
+Would copy 1MiB chunks until it can't write any more, and even if the last chunk is less than 1MiB, it'll still write through it and then stop with an error saying the disk is full (obviously)

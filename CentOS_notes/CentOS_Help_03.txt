@@ -1,0 +1,51 @@
+
+
+#-------------------
+## NVIDIA DRIVER ##
+#-------------------
+install thunderbird
+install kmod-nvidia nvidia-x11-drv
+
+
+
+#------------
+# CUDA
+#-----------
+yum install libXmu-devel.x86_64
+yum install freeglut-devel.x86_64
+
+sudo ./cuda_5.5.22_linux_64.run -override compiler
+(ctrl+c to jump to end)
+
+
+#---------------------------------------------------------------------------------------
+#WARNING: libglamoregl conflicts with NVIDIA drivers
+#         Disable glamoregl or uninstall xorg-x11-glamor
+#         See: http://elrepo.org/tiki/kmod-nvidia (Known Issues) for more information
+#---------------------------------------------------------------------------------------
+
+
+
+
+# --------------------------------------------------------------
+# Install Flash Player
+# --------------------------------------------------------------
+rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+yum install flash-plugin nspluginwrapper alsa-plugins-pulseaudio libcurl
+
+# --------------------------------------------------------------
+# Build VLC
+# --------------------------------------------------------------
+
+
+### ENABLE NUX REPO ###
+sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm
+sudo yum install vlc* python3* record* simplescreenrecorder qt-recordmydesktop pidgin libquicktime ffmpeg NetworkManager-pptp NetworkManager-pptp-gnome qtwebkit
+
+gedit /etc/yum.repos.d/nux-dextop.repo
+disable repo
+
+
+
+libvncserver-devel.x86_64 libogg-devel.x86_64 libmodman-devel.x86_64 libxml2-devel.x86_64 doxygen-latex.x86_64 libgcrypt-devel.x86_64 libbluray-devel.x86_64 libraw1394-devel.x86_64 libavc1394-devel.x86_64 libshout-devel.x86_64 opencv-devel.x86_64 libsss_nss_idmap-devel.x86_64 freerdp-devel.x86_64 gnome-vfs2-devel.x86_64 libmatroska.x86_64 

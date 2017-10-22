@@ -1,0 +1,4 @@
+Linux: create a custom .sh shell script in /etc/profile.d
+
+
+Two Dell S2415H 24-Inch Monitors and one Dell MDS14 Dual Monitor Stand

@@ -1,0 +1,17 @@
+I managed to get it installed... just clone the repository
+
+git clone https://github.com/satya164/elegance-colors.git
+# Then cd into the directory it just created
+
+cd elegance-colors
+# and run the command to checkout the v2.9 tag
+
+git checkout v2.9
+# Once you do that, you should be able to run
+
+make
+
+# without issue. It will display a warning, but you can still run
+
+sudo make install
+# to install it to your system.

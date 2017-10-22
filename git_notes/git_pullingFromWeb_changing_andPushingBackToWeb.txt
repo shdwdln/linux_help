@@ -1,0 +1,159 @@
+----------------------------------------------
+1. Clone branch
+----------------------------------------------
+$ git clone https://github.com/CSC-478-Software-Engineering-Capstone/fall-2017-team-challenge-1-cryptocell.git
+
+----------------------------------------------
+2. Go into the clone branch
+----------------------------------------------
+$ cd fall-2017-team-challenge-1-cryptocell
+
+----------------------------------------------
+3. Create a branch and switch to it
+----------------------------------------------
+(git checkout -b dbail3)
+$ git branch dbail3
+$ git checkout dbail3
+
+
+----------------------------------------------
+4. make a change in your new branch, like 
+opening this file and adding your name
+----------------------------------------------
+$ gedit README.md
+
+
+----------------------------------------------
+5. Add the file to be committed
+----------------------------------------------
+$ git add README.md
+
+----------------------------------------------
+6. Commit this file a comment what it is 
+----------------------------------------------
+$ git commit -m "adjusting README file"
+1 file changed, 1 insertion(+)
+
+----------------------------------------------
+7. push to local branch?
+----------------------------------------------
+$ git push
+
+after password is entered
+Everything up-to-date
+
+
+maintain current behavior after the default changes:
+$ git config --global push.default matching
+
+
+adopt new behavior
+$ git config --global push.default simple
+
+
+----------------------------------------------
+8. Switch the branch to 'master' 
+----------------------------------------------
+$ git checkout master
+Switched to branch 'master'
+
+----------------------------------------------
+9. merge dbail3 branch with 'master'
+----------------------------------------------
+$ git merge dbail3
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+----------------------------------------------
+10. push changes to the repository on the web
+----------------------------------------------
+$ git push
+
+
+Username for 'https://github.com': shdwdln
+Password for 'https://shdwdln@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 24 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 378 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/CSC-478-Software-Engineering-Capstone/fall-2017-team-challenge-1-cryptocell.git
+   5817427..67aea04  master -> master
+
+
+
+
+----------------------------------------------
+11. push your local branch master to remote
+branch called dillon_bailey in that repo
+----------------------------------------------
+$ git push origin master:dillon_bailey
+
+or this?
+git push -u origin <branch_name_test>
+
+
+-----------------------------------------------
+12. Checkout the new branch you made
+-----------------------------------------------
+$ git checkout dillon_bailey
+(Switched to a new branch 'dillon_bailey')
+
+----------------------------------------------
+13. Edit file from new branch
+----------------------------------------------
+$ gedit README.md
+
+----------------------------------------------
+14. Add this new file to the branch
+----------------------------------------------
+$ git add README.md
+
+----------------------------------------------
+15. Commit this change to the branch
+----------------------------------------------
+$ git commit -m "edit to branch"
+
+----------------------------------------------
+16. Push these new changes to specific branch
+----------------------------------------------
+git push origin dillon_bailey:dillon_bailey
+
+----------------------------------------------
+17. Merge from branch to master
+----------------------------------------------
+
+# switch to master branch
+git checkout master 	
+
+# get latest from master (get up to date)
+git pull
+
+# switch to master branch
+git checkout dillon_bailey
+
+# get the latest from dillon_bailey (get up to date)
+git pull
+
+# set the branch 
+git rebase -i master
+
+# switch back to master branch
+git checkout master
+
+# merge dillon_bailey with master
+git merge dillon_bailey
+
+# push this to the server
+git push
+
+
+
+#---------------------------
+# Don't use this format
+#---------------------------
+git checkout master
+git pull origin master
+git merge test
+git push origin master

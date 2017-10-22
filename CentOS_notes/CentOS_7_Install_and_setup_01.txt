@@ -1,0 +1,127 @@
+
+
+#------------------------------------
+## EPEL ---- RHEL/CentOS 7 64-Bit ## 
+#------------------------------------
+cd Downloads
+wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo rpm -ivh epel-release-latest-7.noarch.rpm
+
+#-----
+# RAR
+#-----
+sudo yum install urar
+
+#--------------
+# NTFS read
+#--------------
+yum install ntfsprogs.x86_64 
+
+
+# --------------------------------------------------------------
+# Enable GPU acceleration for video
+# --------------------------------------------------------------
+yum install vdpauinfo libva-vdpau-driver libva-utils
+
+#-------------
+## ELREPO ##
+#-------------
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+
+
+#-------------------------
+# Install NVIDIA Driver
+#-------------------------
+# Depending on the package being installed or the repository setup, it might be necessary to disable non-elrepo repositories:
+# yum --disablerepo=\* --enablerepo=elrepo install kmod-nvidia
+
+#--------------------------------
+# Enable Extras and Testing
+#--------------------------------
+# yum --enablerepo=elrepo-extras
+# yum --enablerepo=elrepo-testing'
+
+
+#----------------------------------------------------
+# Enable GPU acceleration for video
+#----------------------------------------------------
+yum install vdpauinfo libva-vdpau-driver libva-utils
+
+
+#------------
+# CUDA
+#-----------
+yum install libXmu-devel.x86_64
+yum install freeglut-devel.x86_64
+
+sudo ./cuda_5.5.22_linux_64.run -override compiler
+(ctrl+c to jump to end)
+
+#------------
+# Thunar
+#-----------
+yum install Thunar.x86_64
+
+#------------------------
+# MITSUBA
+#------------------------
+yum install mercurial scons OpenEXR-devel xerces-c-devel eigen3-devel fftw3-devel glew-devel
+hg clone https://www.mitsuba-renderer.org/hg/mitsuba
+
+cp build/config-linux-gcc.py config.py
+
+#------------------------
+# VLC
+#------------------------
+rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+yum update
+
+yum info vlc
+
+yum install vlc
+
+
+Installed:
+  vlc.x86_64 0:2.2.1-6.el7.nux                                                                                
+
+Dependency Installed:
+  SDL_image.x86_64 0:1.2.12-11.el7              a52dec.x86_64 0:0.7.4-18.el7.nux                             
+  aalib-libs.x86_64 0:1.4.0-0.22.rc5.el7        faad2-libs.x86_64 1:2.7-5.el7.nux                            
+  ffmpeg-libs.x86_64 0:2.6.5-1.el7.nux          fribidi.x86_64 0:0.19.4-6.el7                                
+  lame-libs.x86_64 0:3.99.5-2.el7               libass.x86_64 0:0.13.1-1.el7                                 
+  libcaca.x86_64 0:0.99-0.17.beta17.el7         libchromaprint.x86_64 0:1.0-1.el7                            
+  libdc1394.x86_64 0:2.2.2-3.el7                libdca.x86_64 0:0.0.5-7.el7.nux                              
+  libdvbpsi.x86_64 0:0.2.2-3.el7.nux            libebml.x86_64 0:1.3.0-1.el7                                 
+  libkate.x86_64 0:0.4.1-5.el7                  libmad.x86_64 0:0.15.1b-16.el7.nux                           
+  libmatroska.x86_64 0:1.4.1-1.el7              libmpeg2.x86_64 0:0.5.1-10.el7.nux                           
+  libtiger.x86_64 0:0.3.4-7.el7                 libupnp.x86_64 0:1.6.19-2.el7                                
+  lirc-libs.x86_64 0:0.9.1a-4.el7               live555.x86_64 0:2013.11.26-1.el7.nux                        
+  minizip.x86_64 0:1.2.7-15.el7                 schroedinger.x86_64 0:1.0.11-4.el7                           
+  soxr.x86_64 0:0.1.2-1.el7                     twolame-libs.x86_64 0:0.3.13-3.el7.nux                       
+  vlc-core.x86_64 0:2.2.1-6.el7.nux             x264-libs.x86_64 0:0.142-11.20141221git6a301b6.el7.nux       
+  x265-libs.x86_64 0:1.6-1.el7.nux              xcb-util-keysyms.x86_64 0:0.4.0-1.el7                        
+  xvidcore.x86_64 0:1.3.2-5.el7.nux             zvbi.x86_64 0:0.2.35-1.el7   
+
+
+#------------------------------------------------------
+# INSTALL MAYA
+#------------------------------------------------------
+yum install mesa-libGLw libXp gamin audiofile audiofile-devel e2fsprogs-libs libpng12 libXmu libXt libXi libXinerama libxcb tcsh xorg-x11-fonts-ISO8859-1-100dpi xorg-x11-fonts-ISO8859-1-75dpi liberation-mono-fonts liberation-fonts-common liberation-sans-fonts liberation-serif-fonts lsb libtiff
+
+ln -s /usr/lib64/libtiff.so.5.2.0 /usr/lib64/libtiff.so.3
+
+pptpd-sysvinit.noarch pptp-setup.x86_64
+
+sudo pptpsetup --create fxphd_vpn --server vpn.fxphd.com --username DBailey --password proteuo7 --encrypt --start
+
+
+
+sudo yum install mesa-libGLw libXp libXpm gamin audiofile audiofile-devel e2fsprogs-libs openssl098e-0.9.8e tcsh
+sudo yum install xorg-x11-fonts-ISO8859-1-100dpi xorg-x11-fonts-ISO8859-1-75dpi liberation-mono-fonts liberation-fonts-common liberation-sans-fonts liberation-serif-fonts
+
+LD_LIBRARY_PATH=/opt/Autodesk/Adlm/R7/lib64 /usr/autodesk/maya2014-x64/bin/adlmreg -i S 657F1 2014.0.0.F 666-69696969 /var/opt/Autodesk/Adlm/Maya2014/MayaConfig.pit
+
+replace
+/usr/autodesk/maya2014-x64/lib/libadlmint.so.7.0.51
+
+

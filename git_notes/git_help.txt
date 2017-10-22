@@ -1,0 +1,53 @@
+git --version
+
+git config --global user.name "YOUR_USERNAME"
+
+Add your username
+$ git config --global user.name "shdwdln"
+
+Check your user name
+$ git config --global user.name
+
+Add your email
+$ git config --global user.email "shdwdln@gmail.com"
+
+Get the information that you have listed
+$ git config --global --list
+
+
+Create a branch
+$ git checkout -b NAME-OF-BRANCH
+
+Shorthand for
+$ git branch iss53
+$ git checkout iss53
+
+fatal: Not a git repositor
+
+
+$ git clone PASTE HTTPS OR SSH HERE
+
+clone for school
+$ git clone https://github.com/CSC-478-Software-Engineering-Capstone/fall-2017-team-challenge-1-cryptocell.git
+
+--------------------
+branch: dillon_bailey
+
+$ git checkout NAME-OF-BRANCH
+
+git checkout https://github.com/CSC-478-Software-Engineering-Capstone/fall-2017-team-challenge-1-cryptocell.git
+
+(check the status of your changes)
+$ git status 
+
+(add changes to commit)
+(git add CHANGES IN RED)
+$ git commit -m "testing here"
+
+(send the changes to gitlab.com)
+$ git push REMOTE NAME-OF-BRANCH
+
+$ git push REMOTE dillon_bailey
+
+
+51c8cb7
